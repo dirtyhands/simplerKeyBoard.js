@@ -1,11 +1,14 @@
-//original code
-//modified version #1
-var freqA = 174;
-var freqS = 196;
-var freqD = 220;
-var freqF = 246;
+//configured full octave (3rd)
+var freqA = 110;//a
+var freqS = 123.47;//b
+var freqD = 130.8;//c
+var freqF = 146.83;//d
+var freqG = 164.8;//e
+var freqH = 174.6;//f
+var freqJ = 196;//g
+var freqK = 220;//a
 
-var oscA, oscS, oscD, oscF;
+var oscA, oscS, oscD, oscF, oscG, oscH, oscJ, oscK;
 
 var playing = false;
 
@@ -36,6 +39,30 @@ function setup() {
   oscF.freq(freqF);
   oscF.amp(0);
   oscF.start();
+  
+	oscG = new p5.Oscillator();
+  oscG.setType('triangle');
+  oscG.freq(freqG);
+  oscG.amp(0);
+  oscG.start();
+  
+  oscH = new p5.Oscillator();
+  oscH.setType('triangle');
+  oscH.freq(freqH);
+  oscH.amp(0);
+  oscH.start();
+  
+  oscJ = new p5.Oscillator();
+  oscJ.setType('triangle');
+  oscJ.freq(freqJ);
+  oscJ.amp(0);
+  oscJ.start();
+  
+  oscK = new p5.Oscillator();
+  oscK.setType('triangle');
+  oscK.freq(freqK);
+  oscK.amp(0);
+  oscK.start();
 }
 
 function draw() {
@@ -54,6 +81,14 @@ function keyPressed() {
     osc = oscD;
   } else if (key == 'F') {
     osc = oscF;
+  } else if (key == 'G') {
+    osc = oscG;
+  } else if (key == 'H') {
+    osc = oscH;
+  } else if (key == 'J') {
+    osc = oscJ;
+  } else if (key == 'K') {
+    osc = oscK;
   }
   if (osc) {
     osc.amp(0.5, 0.1);
@@ -73,6 +108,14 @@ function keyReleased() {
     osc = oscD;
   } else if (key == 'F') {
     osc = oscF;
+  } else if (key == 'G') {
+    osc = oscG;
+  } else if (key == 'H') {
+    osc = oscH;
+  } else if (key == 'J') {
+    osc = oscJ;
+  } else if (key == 'Ka') {
+    osc = oscK;
   }
   if (osc) {
     osc.amp(0, 0.5);
