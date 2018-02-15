@@ -114,7 +114,7 @@ function keyReleased() {
     osc = oscH;
   } else if (key == 'J') {
     osc = oscJ;
-  } else if (key == 'Ka') {
+  } else if (key == 'K') {
     osc = oscK;
   }
   if (osc) {
